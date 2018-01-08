@@ -1,0 +1,12 @@
+//global proc serie(int $n)
+{
+	int $n = 20;
+	for($i=0;$i<$n;$i++) 
+	{ 
+		$tx = $i * 3; 
+		$rz = $i *30; 
+		polyCube; 
+		rotate -r 0 0 $rz; 
+		move -r -os $tx 0 0; 
+	} 
+}
