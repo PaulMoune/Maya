@@ -20,4 +20,5 @@ else :
             point.append((Vertices[3*int(data[j+1])],Vertices[3*int(data[j+1])+1],Vertices[3*int(data[j+1])+2]))
         cmds.polyCreateFacet( p = point ) 
 cmds.select(all=True)
+cmds.polyUnite()
 MyFile.close()
