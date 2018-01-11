@@ -1,4 +1,4 @@
-MyFile = open("C:\Users\ensimag\Documents\ProjetMaya\olaf.off","r")
+MyFile = open("C:\Users\ensimag\Documents\ProjetMaya\Lowres.off","r")
 data = MyFile.readline().rstrip('\n\r').split(" ")
 if data[0] != "OFF" :
     print("Error : il faut lire un fichier OFF")
@@ -19,4 +19,5 @@ else :
         for j in range(vert) :
             point.append((Vertices[3*int(data[j+1])],Vertices[3*int(data[j+1])+1],Vertices[3*int(data[j+1])+2]))
         cmds.polyCreateFacet( p = point ) 
+cmds.select(all=True)
 MyFile.close()
