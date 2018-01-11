@@ -1,10 +1,11 @@
-MyFile = open("C:\Users\ensimag\Documents\ProjetMaya\Lowres.off","r")
+import time
+tmps1=time.clock()
+MyFile = open("C:\Users\ensimag\Documents\MayaProject\Lowres.off","r")
 data = MyFile.readline().rstrip('\n\r').split(" ")
 if data[0] != "OFF" :
     print("Error : il faut lire un fichier OFF")
 else :
     data = MyFile.readline().rstrip('\n\r').split(" ")
-    print(data)
     nb_vertices, nb_faces = int(data[0]),int(data[1])
     Vertices = []
     for i in range(0,nb_vertices) :
@@ -22,3 +23,5 @@ else :
 cmds.select(all=True)
 cmds.polyUnite()
 MyFile.close()
+tmps2=time.clock()
+print "Temps d'execution = %d\n" %(tmps2-tmps1)
